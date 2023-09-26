@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EmptyFinalProject.Models.Sports>
+
+	@section Scripts{
+	<script src="~/client/main.35e297bce7a0a0b8.js" asp-append-version="true"></script>
+	<script src="~/client/polyfills.6b9e5e7ae92fe89b.js"></script>
+	<script src="~/client/runtime.7ae29a296d479790.js"></script>
+	<script src="~/client/vendor.537282717cf23c04.js"></script>
+	}
+
+	@section head{
+		<link href="~/client/styles.ef46db3751d8e999.css" rel="stylesheet" />
+
+	}
+
+	<app-root></app-root>
+
+<h1>
+
+	Welcome to the Sports Website!
+	<br />
+	<br />
+</h1>
+
+
+
+<div class="row" >
+
+@foreach( var sport in Model ){
+
+
+	<div class="col-sm-3">
+		<div class="card-deck">
+			<div class="card-shadow">
+				<div class="card-body">
+
+					<h4 class="card-title">
+						@sport.name
+					</h4>
+
+					<p class="card-text">
+
+					<p>Total Players Required: @sport.playersReq</p>
+
+					<p>Indoor/Outdoor: @sport.sportsType</p>
+
+					<p>Category ID: @sport.categoryId</p>
+						<a class="lnk btn btn-warning" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-sportsid=@sport.SportsId> Add To Cart</a>
+						@*<p>Category: @sport.catergory.categoryName </p>*@
+
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	@*
+	@sport.SportsId
+	@sport.playersReq
+	@sport.sportsType
+	*@
+}
+</div>

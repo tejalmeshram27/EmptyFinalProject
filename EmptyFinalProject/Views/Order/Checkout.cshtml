@@ -1,0 +1,69 @@
+﻿@model EmptyFinalProject.Models.Order
+
+<h4 >Order Form</h4>
+
+<form asp-action="Checkout" method="post">
+
+	<br />
+	<label asp-for="Name" > Name: 
+		<input asp-for="Name" />
+		<span asp-validation-for="Name" class="text-danger"></span>
+
+	</label><br /><br />
+
+	<label asp-for="Address1"> Address1: 
+		<input asp-for="Address1" />
+		<span asp-validation-for="Address1" class="text-danger"></span>
+
+	</label><br /><br />
+
+	<label asp-for="Address1">
+		Address2:
+		<input asp-for="Address2" />
+		<span asp-validation-for="Address2" class="text-danger"></span>
+
+	</label><br /><br />
+
+	<label asp-for="Country"> Country:
+		<input asp-for="Country" />
+		<span asp-validation-for="Country" class="text-danger"></span>
+
+	</label><br /><br />
+
+	<label asp-for="State"> State: 
+		<input asp-for="State" />
+		<span asp-validation-for="State" class="text-danger"></span>
+
+	</label><br /><br />
+
+	<label asp-for="City"> City: 
+		<input asp-for="City" />
+		<span asp-validation-for="City" class="text-danger"></span>
+
+	</label><br /><br />
+
+	<label asp-for="Pincode"> Pincode: 
+		<input asp-for="Pincode" />
+		<span asp-validation-for="Pincode" class="text-danger"></span>
+
+	</label><br /><br />
+
+	<label asp-for="Phone"> Phone: 
+		<input asp-for="Phone" />
+		<span asp-validation-for="Phone" class="text-danger"></span>
+
+	</label><br /><br />
+	<label asp-for="Email"> Email: 
+		<input asp-for="Email" />
+		<span asp-validation-for="Email" class="text-danger"></span>
+
+	</label><br /><br />
+
+	<div class="form-group"></div>
+
+	<input type="submit" value="Proceed to Pay" />
+
+	<div asp-validation-summary="All" class="text-danger"></div>
+
+
+</form>

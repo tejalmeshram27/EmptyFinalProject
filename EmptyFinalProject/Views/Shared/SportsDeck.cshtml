@@ -1,0 +1,29 @@
+﻿@model Sports
+
+
+
+<div class="col-sm-3">
+    <div class="card-deck">
+        .
+        <div class="card shadow">
+
+
+
+            <div class="card-body">
+                <h4 class="card-title">
+                    @Model.name
+                </h4>
+                <p class="card-text">
+                    
+                    Category Id : @Model.categoryId
+                    category : @Model.catergory.categoryName
+                    <a class="lnk btn btn-warning" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-sportsid=@Model.SportsId> Add To Cart</a>
+
+                    <a class="lnk btn btn-warning" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-sportsid=@Model.SportsId> Remove from Cart </a>
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

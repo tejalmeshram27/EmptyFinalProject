@@ -1,0 +1,37 @@
+﻿@model HomeViewModel
+
+<h2>Top Sports of the Week</h2>
+
+@foreach (var sport in Model.Sports)
+{
+	@*<div class="card-header">*@
+		@*<partial name="SportsDeck" model="sport"/>*@
+	@*</div>*@
+
+<div class="card-deck">
+	<div class="card-shadow">
+			@*<div class="card-header">
+				<h2>Top Sports of the Week</h2>
+			</div>*@
+		<div class="card-body">
+			<div class="card-text">
+				@sport.name
+			</div>
+		</div>
+	</div>
+</div>
+}
+
+ 
+
+
+@* @{
+	Layout = "_Layout";
+}
+
+<h1 >
+
+	Welcome to the Sports Website
+
+</h1>
+*@

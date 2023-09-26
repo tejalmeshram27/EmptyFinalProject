@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css"  />
+    <link rel="stylesheet" href="~/css/Site.css"  />
+    <link rel="stylesheet" href="~/EmptyFinalProject.styles.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.css" />
+
+    @RenderSection("head", false)
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sports Tak</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Sports" asp-action="Index">Sports</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Sports" asp-action="SearchSports">Search</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingCart" asp-action="Index">Cart</a>
+                        </li>
+
+
+                        @*<li class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle bg-light text-black" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Sports" asp-action="Category" asp-route-id="1">High Popularity</a></li>
+                                <li><a class="dropdown-item" asp-controller="Sports" asp-action="Category" asp-route-id="2">Medium Popularity</a></li>
+                                <li><a class="dropdown-item" asp-controller="Sports" asp-action="Category" asp-route-id="3">Low Popularity</a></li>
+                            </ul>
+                        </li>*@
+
+                       @* @await Component.InvokeAsync("CategoryMenu")
+                        <vc:category-menu></vc:category-menu>*@
+
+
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>*@
+
+                        <div >@await Component.InvokeAsync("ShoppingCartIcon")</div>
+
+                        @*style="margin-left: 100px"*@
+
+                        <partial name="_LoginPartial" />
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <script src="~lib/jquery/jquery.js"></script>
+    <script src="~lib/bootstrap/js/bootstrap.js"></script>
+    @await RenderSectionAsync("Scripts",required:false)
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<h2>Search for your Sport</h2>
+
+<input type="text" name="SearchStr" id="SearchStr" />
+<button onclick="SearchSports()">Search</button>
+
+<div id="resultDiv"></div>
+
+<script>
+	function SearchSports() {
+
+		let resultDiv = document.getElementById("resultDiv");
+		let inputVal = document.getElementById("SearchStr").value;
+
+		let xhr = new XMLHttpRequest();
+
+		xhr.open('POST', "https://localhost:7247/api/Search/", true);
+
+		xhr.setRequestHeader('Content-type', 'application/json');
+
+		xhr.onload = function () {
+			let sports = JSON.parse(this.responseText);
+			resultDiv.innerHTML = "";
+			for(let sport of sports) {
+				resultDiv.innerHTML += `Sport Name: ${sport.name} <br/>
+					Players Required: ${sport.playersReq} <br/>
+					Sport Type: ${sport.sportsType} <br/>`
+			}
+		}
+		xhr.send(JSON.stringify(inputVal));
+	}
+</script>
